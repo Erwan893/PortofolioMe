@@ -1,0 +1,57 @@
+.fade-up {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease;
+}
+.fade-up.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+#idCard {
+  animation: swing 3s ease-in-out infinite;
+  transform-origin: top center;
+  background: linear-gradient(145deg, #0f172a, #1f2933);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+#idCard::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 1rem;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(128, 0, 32, 0.25),
+    transparent
+  );
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+
+#idCard:hover::before {
+  opacity: 1;
+}
+
+@keyframes swing {
+  0% {
+    transform: rotate(-2deg);
+  }
+  50% {
+    transform: rotate(2deg);
+  }
+  100% {
+    transform: rotate(-2deg);
+  }
+}
+
+section {
+  scroll-margin-top: 120px;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  color: #22d3ee;
+  scale: 0.7;
+}
